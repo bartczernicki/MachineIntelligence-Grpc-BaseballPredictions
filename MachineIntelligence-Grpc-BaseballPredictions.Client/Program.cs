@@ -13,18 +13,22 @@ namespace MachineIntelligence_Grpc_BaseballPredictions.Client
         {
             Console.WriteLine("Starting the gRPC Baseball Predictions Client.");
 
+            // Retrieve Sample Baseball Data
+            var mlbBaseballPlayerBatters =  await BaseballData.GetSampleBaseballData();
+
             // The port number(5001) must match the port of the gRPC server.
             using var channel = GrpcChannel.ForAddress("https://localhost:5001");
             var baseBallPredictionClient = new BaseballBatterPrediction.BaseballBatterPredictionClient(channel);
 
-            for (int i = 0; i != 10; i++)
+            foreach(var mlbBaseballPlayerBatter in mlbBaseballPlayerBatters)
             {
                 await Task.Delay(500);
 
                 var baseBallPredictionRequest = new MLBBaseballBatterPredictionRequest { 
                     PredictionID = Guid.NewGuid().ToString(),
                     PredictionType = "BaseballHOfInduction",
-                    ModelName = "LogisticRegression"
+                    ModelName = "LogisticRegression",
+                    MLBBaseballBatter = mlbBaseballPlayerBatter
                 };
 
                 var baseBallPredictionReply = await baseBallPredictionClient.MakeBaseBallBatterPredictionAsync(

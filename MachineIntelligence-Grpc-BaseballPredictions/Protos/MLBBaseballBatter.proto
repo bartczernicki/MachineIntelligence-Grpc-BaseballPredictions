@@ -48,3 +48,10 @@ message MLBBaseballBatter {
     float LastYearPlayed = 21;
     float ID = 22;
 }
+
+message MLBHOFPrediction
+{
+    bool Prediction = 1;
+    float Probability = 2;
+    float Score = 3;
+}
