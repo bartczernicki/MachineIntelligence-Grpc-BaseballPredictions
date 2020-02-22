@@ -31,7 +31,7 @@ namespace MachineIntelligence_Grpc_BaseballPredictions
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGrpcService<GreeterService>();
+                endpoints.MapGrpcService<BaseballPredictionService>();
 
                 endpoints.MapGet("/", async context =>
                 {

@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+option csharp_namespace = "MachineIntelligence_Grpc_BaseballPredictions";
+
+package mlbbaseballbatter;
+
+service BaseballBatterPrediction {
+  // Sends a greeting
+  rpc MakeBaseBallBatterPrediction (MLBBaseballBatterPredictionRequest) returns (MLBBaseballBatterPredictionResponse);
+}
+
+message MLBBaseballBatterPredictionRequest {
+    string PredictionID = 1;
+    string PredictionType = 2;
+    string ModelName = 3;
+    MLBBaseballBatter MLBBaseballBatter = 4;
+}
+
+
+message MLBBaseballBatterPredictionResponse {
+    string PredictionID = 1;
+    string PredictionType = 2;
+    float PredictedProbability = 3;
+    MLBBaseballBatter MLBBaseballBatter = 4;
+}
+
+message MLBBaseballBatter {
+    bool InductedToHallOfFame = 1;
+    bool OnHallOfFameBallot = 2;
+    string FullPlayerName = 3;
+    float YearsPlayed = 4;
+    float AB = 5;
+    float R = 6;
+    float H = 7;
+    float Doubles = 8;
+    float Triples = 9;
+    float HR = 10;
+    float RBI = 11;
+    float SB = 12;
+    float BattingAverage = 13;
+    float SluggingPct = 14;
+    float AllStarAppearances = 15;
+    float MVPs = 16;
+    float TripleCrowns = 17;
+    float GoldGloves = 18;
+    float MajorLeaguePlayerOfTheYearAwards = 19;
+    float TB = 20;
+    float LastYearPlayed = 21;
+    float ID = 22;
+}
