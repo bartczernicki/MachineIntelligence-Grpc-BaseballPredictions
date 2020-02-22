@@ -12,6 +12,7 @@ namespace MachineIntelligence_Grpc_BaseballPredictions.Client
         static async Task Main(string[] args)
         {
             Console.WriteLine("Starting the gRPC Baseball Predictions Client.");
+            Console.WriteLine(string.Empty);
 
             // Retrieve Sample Baseball Data
             var mlbBaseballPlayerBatters =  await BaseballData.GetSampleBaseballData();
@@ -26,21 +27,22 @@ namespace MachineIntelligence_Grpc_BaseballPredictions.Client
 
                 var baseBallPredictionRequest = new MLBBaseballBatterPredictionRequest { 
                     PredictionID = Guid.NewGuid().ToString(),
-                    PredictionType = "BaseballHOfInduction",
-                    ModelName = "LogisticRegression",
+                    PredictionType = PredictionType.OnHallOfFameBallot,
+                    AlgorithmName = AlgorithmName.GeneralizedAdditiveModel,
                     MLBBaseballBatter = mlbBaseballPlayerBatter
                 };
 
                 var baseBallPredictionReply = await baseBallPredictionClient.MakeBaseBallBatterPredictionAsync(
                     baseBallPredictionRequest
                     );
-                Console.WriteLine("PredictionID: {0} :::: PredictedProbability: {1}",
-                    baseBallPredictionReply.PredictionID,
-                    baseBallPredictionReply.PredictedProbability
-                    );
+
+                Console.WriteLine("PredictionID: {0}", baseBallPredictionReply.PredictionID);
+                Console.WriteLine("Full Player Name: {0}", baseBallPredictionReply.MLBBaseballBatter.FullPlayerName);
+                Console.WriteLine("Predicted Probability of {0}: {1}", baseBallPredictionRequest.PredictionType, baseBallPredictionReply.MLBHOFPrediction.Probability);
+                Console.WriteLine("#################################");
             }
 
-
+            Console.WriteLine("Finished running predictions using gRPC Baseball Predictions Client.");
             Console.ReadLine();
         }
     }

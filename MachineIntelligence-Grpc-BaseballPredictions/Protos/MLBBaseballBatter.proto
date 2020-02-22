@@ -11,17 +11,17 @@ service BaseballBatterPrediction {
 
 message MLBBaseballBatterPredictionRequest {
     string PredictionID = 1;
-    string PredictionType = 2;
-    string ModelName = 3;
+    PredictionType PredictionType = 2;
+    AlgorithmName AlgorithmName = 3;
     MLBBaseballBatter MLBBaseballBatter = 4;
 }
 
 
 message MLBBaseballBatterPredictionResponse {
     string PredictionID = 1;
-    string PredictionType = 2;
-    float PredictedProbability = 3;
-    MLBBaseballBatter MLBBaseballBatter = 4;
+    PredictionType PredictionType = 2;
+    MLBBaseballBatter MLBBaseballBatter = 3;
+    MLBHOFPrediction MLBHOFPrediction = 4;
 }
 
 message MLBBaseballBatter {
@@ -49,9 +49,19 @@ message MLBBaseballBatter {
     float ID = 22;
 }
 
-message MLBHOFPrediction
-{
+message MLBHOFPrediction {
     bool Prediction = 1;
     float Probability = 2;
     float Score = 3;
+}
+
+enum AlgorithmName {
+    FastTree = 0;
+    GeneralizedAdditiveModel = 1;
+    LogisticRegression = 2;
+}
+
+enum PredictionType {
+    InductedToHallOfFame = 0;
+    OnHallOfFameBallot = 1;
 }

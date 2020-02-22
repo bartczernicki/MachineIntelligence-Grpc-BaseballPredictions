@@ -16,17 +16,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="Models\InductedToHallOfFame-FastTree.mlnet">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Models\InductedToHallOfFame-LogisticRegression.mlnet">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Models\InductedToHallOfFameGeneralizedAdditiveModel.mlnet">
+    <None Update="Models\InductedToHallOfFame-GeneralizedAdditiveModel.mlnet">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Models\OnHallOfFameBallot-FastTree.mlnet">
@@ -35,7 +31,7 @@
     <None Update="Models\OnHallOfFameBallot-LogisticRegression.mlnet">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Models\OnHallOfFameBallotGeneralizedAdditiveModel.mlnet">
+    <None Update="Models\OnHallOfFameBallot-GeneralizedAdditiveModel.mlnet">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>

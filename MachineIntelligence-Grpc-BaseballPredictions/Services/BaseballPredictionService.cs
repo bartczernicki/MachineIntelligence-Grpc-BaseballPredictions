@@ -25,13 +25,16 @@ namespace MachineIntelligence_Grpc_BaseballPredictions
         {
             _logger.LogInformation("Making prediction for {0}", request.MLBBaseballBatter.FullPlayerName);
 
-            var prediction = _predictionPool.Predict("InductedToHallOfFameGeneralizedAdditiveModel", request.MLBBaseballBatter);
+            var modelNameForPredictions = string.Format("{0}-{1}", request.PredictionType, request.AlgorithmName);
+
+            var prediction = _predictionPool.Predict(modelNameForPredictions, request.MLBBaseballBatter);
 
             var response = new MLBBaseballBatterPredictionResponse
             {
                 PredictionID = request.PredictionID,
                 PredictionType = request.PredictionType,
-                PredictedProbability = prediction.Probability
+                MLBBaseballBatter = request.MLBBaseballBatter,
+                MLBHOFPrediction = prediction
             };
 
 
