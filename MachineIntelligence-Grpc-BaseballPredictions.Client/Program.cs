@@ -28,7 +28,7 @@ namespace MachineIntelligence_Grpc_BaseballPredictions.Client
                 var baseBallPredictionRequest = new MLBBaseballBatterPredictionRequest { 
                     PredictionID = Guid.NewGuid().ToString(),
                     PredictionType = PredictionType.OnHallOfFameBallot,
-                    AlgorithmName = AlgorithmName.GeneralizedAdditiveModel,
+                    AlgorithmName = AlgorithmName.LightGbm,
                     MLBBaseballBatter = mlbBaseballPlayerBatter
                 };
 

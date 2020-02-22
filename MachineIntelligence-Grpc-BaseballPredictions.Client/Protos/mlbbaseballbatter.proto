@@ -56,9 +56,11 @@ message MLBHOFPrediction {
 }
 
 enum AlgorithmName {
-    FastTree = 0;
-    GeneralizedAdditiveModel = 1;
-    LogisticRegression = 2;
+    FastForest = 0;
+    FastTree = 1;
+    GeneralizedAdditiveModel = 2;
+    LogisticRegression = 3;
+    LightGbm = 4;
 }
 
 enum PredictionType {
