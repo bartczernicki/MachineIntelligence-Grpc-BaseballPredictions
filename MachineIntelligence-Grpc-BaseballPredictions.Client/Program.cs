@@ -26,7 +26,8 @@ namespace MachineIntelligence_Grpc_BaseballPredictions.Client
             foreach(var mlbBaseballPlayerBatter in mlbBaseballPlayerBatters)
             {
                 // Slow down predictions, to see a better representation on the Console program
-                await Task.Delay(200);
+                // Note: You would remove this in a real-world implementation
+                await Task.Delay(600);
 
                 // OnHallOfFameBallot Prediction
                 var baseBallPredictionRequest = new MLBBaseballBatterPredictionRequest { 

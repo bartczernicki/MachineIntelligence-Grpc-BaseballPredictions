@@ -23,7 +23,8 @@ namespace MachineIntelligence_Grpc_BaseballPredictions
 
         public override Task<MLBBaseballBatterPredictionResponse> MakeBaseBallBatterPrediction(MLBBaseballBatterPredictionRequest request, ServerCallContext context)
         {
-            _logger.LogInformation("Making prediction for {0}", request.MLBBaseballBatter.FullPlayerName);
+            _logger.LogInformation("Making prediction for {0} : Predicting: {0}",
+                request.MLBBaseballBatter.FullPlayerName, request.PredictionType);
 
             MLBHOFPrediction prediction;
 
