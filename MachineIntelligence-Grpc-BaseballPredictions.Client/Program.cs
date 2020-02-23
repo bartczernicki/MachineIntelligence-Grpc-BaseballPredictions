@@ -12,8 +12,9 @@ namespace MachineIntelligence_Grpc_BaseballPredictions.Client
         static async Task Main(string[] args)
         {
             Console.Title = "gRPC Baseball Predictions Client";
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Starting the gRPC Baseball Predictions Client.");
-            Console.WriteLine(string.Empty);
+            Console.WriteLine();
 
             // Retrieve Sample Baseball Data
             var mlbBaseballPlayerBatters =  await BaseballData.GetSampleBaseballData();
@@ -25,7 +26,7 @@ namespace MachineIntelligence_Grpc_BaseballPredictions.Client
             foreach(var mlbBaseballPlayerBatter in mlbBaseballPlayerBatters)
             {
                 // Slow down predictions, to see a better representation on the Console program
-                await Task.Delay(500);
+                await Task.Delay(200);
 
                 var baseBallPredictionRequest = new MLBBaseballBatterPredictionRequest { 
                     PredictionID = Guid.NewGuid().ToString(),
@@ -35,17 +36,23 @@ namespace MachineIntelligence_Grpc_BaseballPredictions.Client
                     MLBBaseballBatter = mlbBaseballPlayerBatter
                 };
 
-                var baseBallPredictionReply = await baseBallPredictionClient.MakeBaseBallBatterPredictionAsync(
-                    baseBallPredictionRequest
-                    );
+                var baseBallPredictionReply = 
+                    await baseBallPredictionClient.MakeBaseBallBatterPredictionAsync(baseBallPredictionRequest);
 
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("######################################################");
+                Console.ResetColor();
                 Console.WriteLine("PredictionID: {0}", baseBallPredictionReply.PredictionID);
                 Console.WriteLine("Full Player Name: {0}", baseBallPredictionReply.MLBBaseballBatter.FullPlayerName);
-                Console.WriteLine("Predicted Probability of {0}: {1}", baseBallPredictionRequest.PredictionType, baseBallPredictionReply.MLBHOFPrediction.Probability);
-                Console.WriteLine("#################################");
+                Console.WriteLine("Predicted Probability of {0}: {1}", baseBallPredictionRequest.PredictionType,
+                    Math.Round((Decimal)baseBallPredictionReply.MLBHOFPrediction.Probability, 5, MidpointRounding.AwayFromZero));
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("######################################################");
             }
 
-            Console.WriteLine("Finished running predictions using gRPC Baseball Predictions Client.");
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            Console.WriteLine();
+            Console.WriteLine("Finished the gRPC Baseball Predictions Client.");
             Console.ReadLine();
         }
     }
