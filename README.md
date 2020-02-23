@@ -9,6 +9,7 @@ This solution is a client-server model implementation in .NET Core.  The .NET Co
 
 **The gRPC example system has the following features:**
 * Two projects - client & server communicating with gRPC
+* Both the client & server projects will start in parallel to immediately start the communication channel bridge
 * Nested Procotol Buffers (proto) exchanging complex messages for Machine Learning inference
 * Dozen ML.NET models loaded into memory for configurable predictions
 * Individual prediction or ensemble model predictions using baseball data to predict HOF ballot presence or induction
