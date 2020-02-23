@@ -23,12 +23,13 @@ namespace MachineIntelligence_Grpc_BaseballPredictions.Client
 
             foreach(var mlbBaseballPlayerBatter in mlbBaseballPlayerBatters)
             {
+                // Slow down predictions, to see a better representation on the Console program
                 await Task.Delay(500);
 
                 var baseBallPredictionRequest = new MLBBaseballBatterPredictionRequest { 
                     PredictionID = Guid.NewGuid().ToString(),
                     PredictionType = PredictionType.OnHallOfFameBallot,
-                    AlgorithmName = AlgorithmName.LightGbm,
+                    AlgorithmName = AlgorithmName.StochasticGradientDescentCalibrated,
                     MLBBaseballBatter = mlbBaseballPlayerBatter
                 };
 
