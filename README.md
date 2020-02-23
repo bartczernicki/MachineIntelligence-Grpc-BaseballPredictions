@@ -1,4 +1,4 @@
-**gRPC Baseball Predictions - Server & Client**
+**gRPC Baseball Predictions - Client & Server**
 
 This solution is a client-server model implementation in .NET Core.  The .NET Core client communicates with a server using gRPC conventions.  The server hosts in-memory Machine Learning models, that are surfaced for real-time prediction inference.
 
