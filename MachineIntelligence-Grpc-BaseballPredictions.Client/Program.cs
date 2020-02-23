@@ -28,9 +28,10 @@ namespace MachineIntelligence_Grpc_BaseballPredictions.Client
                 // Slow down predictions, to see a better representation on the Console program
                 await Task.Delay(200);
 
+                // OnHallOfFameBallot Prediction
                 var baseBallPredictionRequest = new MLBBaseballBatterPredictionRequest { 
                     PredictionID = Guid.NewGuid().ToString(),
-                    PredictionType = PredictionType.InductedToHallOfFame,
+                    PredictionType = PredictionType.OnHallOfFameBallot,
                     AlgorithmName = AlgorithmName.StochasticGradientDescentCalibrated,
                     UseEnsembleOfAlgorithms = true,
                     MLBBaseballBatter = mlbBaseballPlayerBatter
@@ -39,15 +40,44 @@ namespace MachineIntelligence_Grpc_BaseballPredictions.Client
                 var baseBallPredictionReply = 
                     await baseBallPredictionClient.MakeBaseBallBatterPredictionAsync(baseBallPredictionRequest);
 
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine(baseBallPredictionReply.MLBBaseballBatter.FullPlayerName);
                 Console.ForegroundColor = ConsoleColor.Yellow;
-                Console.WriteLine("######################################################");
+                Console.WriteLine("On Hall Of Fame Ballot ################################");
                 Console.ResetColor();
                 Console.WriteLine("PredictionID: {0}", baseBallPredictionReply.PredictionID);
-                Console.WriteLine("Full Player Name: {0}", baseBallPredictionReply.MLBBaseballBatter.FullPlayerName);
                 Console.WriteLine("Predicted Probability of {0}: {1}", baseBallPredictionRequest.PredictionType,
                     Math.Round((Decimal)baseBallPredictionReply.MLBHOFPrediction.Probability, 5, MidpointRounding.AwayFromZero));
                 Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("######################################################");
+                Console.WriteLine();
+
+                // InductedToHallOfFame Prediction
+
+                // OnHallOfFameBallot Prediction
+                baseBallPredictionRequest = new MLBBaseballBatterPredictionRequest
+                {
+                    PredictionID = Guid.NewGuid().ToString(),
+                    PredictionType = PredictionType.OnHallOfFameBallot,
+                    AlgorithmName = AlgorithmName.StochasticGradientDescentCalibrated,
+                    UseEnsembleOfAlgorithms = true,
+                    MLBBaseballBatter = mlbBaseballPlayerBatter
+                };
+
+                baseBallPredictionReply =
+                    await baseBallPredictionClient.MakeBaseBallBatterPredictionAsync(baseBallPredictionRequest);
+
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine(baseBallPredictionReply.MLBBaseballBatter.FullPlayerName);
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("Inducted to Hall Of Fame #############################");
+                Console.ResetColor();
+                Console.WriteLine("PredictionID: {0}", baseBallPredictionReply.PredictionID);
+                Console.WriteLine("Predicted Probability of {0}: {1}", baseBallPredictionRequest.PredictionType,
+                    Math.Round((Decimal)baseBallPredictionReply.MLBHOFPrediction.Probability, 5, MidpointRounding.AwayFromZero));
+                Console.ForegroundColor = ConsoleColor.Yellow;
+                Console.WriteLine("######################################################");
+                Console.WriteLine();
             }
 
             Console.ForegroundColor = ConsoleColor.Cyan;
