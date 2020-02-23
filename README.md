@@ -5,7 +5,7 @@
 This solution is a client-server model implementation in .NET Core.  The .NET Core client communicates with a server using gRPC conventions.  The server hosts in-memory Machine Learning models, that are surfaced for real-time prediction inference.
 
 ![gRPC Client & Server](https://github.com/bartczernicki/MachineIntelligence-Grpc-BaseballPredictions/blob/master/Images/gRPCBaseballServerAndClient.gif)
-*In the example above.  The solution's server and client are communicating via a gRPC channel, exchaning proto message schemas which are used to execute Machine Intelligence predictions*
+*In the example above, the server's logs correspond to the client's request logs as the Machine Learning models execute predictions*
 
 **The gRPC example system has the following features:**
 * Two projects - client & server communicating with gRPC
