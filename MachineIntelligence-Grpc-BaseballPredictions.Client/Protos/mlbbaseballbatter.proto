@@ -13,7 +13,8 @@ message MLBBaseballBatterPredictionRequest {
     string PredictionID = 1;
     PredictionType PredictionType = 2;
     AlgorithmName AlgorithmName = 3;
-    MLBBaseballBatter MLBBaseballBatter = 4;
+    bool UseEnsembleOfAlgorithms = 4;
+    MLBBaseballBatter MLBBaseballBatter = 5;
 }
 
 

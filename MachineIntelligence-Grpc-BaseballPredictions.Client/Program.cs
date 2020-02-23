@@ -11,6 +11,7 @@ namespace MachineIntelligence_Grpc_BaseballPredictions.Client
     {
         static async Task Main(string[] args)
         {
+            Console.Title = "gRPC Baseball Predictions Client";
             Console.WriteLine("Starting the gRPC Baseball Predictions Client.");
             Console.WriteLine(string.Empty);
 
@@ -28,8 +29,9 @@ namespace MachineIntelligence_Grpc_BaseballPredictions.Client
 
                 var baseBallPredictionRequest = new MLBBaseballBatterPredictionRequest { 
                     PredictionID = Guid.NewGuid().ToString(),
-                    PredictionType = PredictionType.OnHallOfFameBallot,
+                    PredictionType = PredictionType.InductedToHallOfFame,
                     AlgorithmName = AlgorithmName.StochasticGradientDescentCalibrated,
+                    UseEnsembleOfAlgorithms = true,
                     MLBBaseballBatter = mlbBaseballPlayerBatter
                 };
 

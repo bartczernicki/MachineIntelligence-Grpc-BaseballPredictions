@@ -25,9 +25,34 @@ namespace MachineIntelligence_Grpc_BaseballPredictions
         {
             _logger.LogInformation("Making prediction for {0}", request.MLBBaseballBatter.FullPlayerName);
 
-            var modelNameForPredictions = string.Format("{0}-{1}", request.PredictionType, request.AlgorithmName);
+            MLBHOFPrediction prediction;
 
-            var prediction = _predictionPool.Predict(modelNameForPredictions, request.MLBBaseballBatter);
+            // If using ensemble, iterate through the different algorithms used in the models
+            if (request.UseEnsembleOfAlgorithms)
+            {
+                List<MLBHOFPrediction> allModelAlgorithmPredictions = new List<MLBHOFPrediction>();
+
+                foreach (AlgorithmName algorithmName in Enum.GetValues(typeof(AlgorithmName)))
+                {
+                    var tempmodelNameForPrediction = string.Format("{0}-{1}", request.PredictionType, algorithmName);
+                    var tempPrediction = _predictionPool.Predict(tempmodelNameForPrediction, request.MLBBaseballBatter);
+                    allModelAlgorithmPredictions.Add(tempPrediction);
+                }
+
+                prediction = new MLBHOFPrediction
+                {
+                    Probability = (allModelAlgorithmPredictions.Sum(a => a.Probability) / allModelAlgorithmPredictions.Count()),
+                    Prediction = (allModelAlgorithmPredictions.Sum(a => a.Probability) / allModelAlgorithmPredictions.Count()) >= 0.5 ? true : false,
+                    Score = 0 // Score is meaningless, as each algorithm's processes use different scales
+                };
+
+            }
+            // Else, perform a simple prediction based on the source algorithm of the model
+            else
+            {
+                var modelNameForPredictions = string.Format("{0}-{1}", request.PredictionType, request.AlgorithmName);
+                prediction = _predictionPool.Predict(modelNameForPredictions, request.MLBBaseballBatter);
+            }
 
             var response = new MLBBaseballBatterPredictionResponse
             {

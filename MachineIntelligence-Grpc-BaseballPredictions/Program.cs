@@ -12,6 +12,7 @@ namespace MachineIntelligence_Grpc_BaseballPredictions
     {
         public static void Main(string[] args)
         {
+            Console.Title = "gRPC Baseball Predictions Server";
             CreateHostBuilder(args).Build().Run();
         }
 

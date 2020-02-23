@@ -424,8 +424,8 @@ namespace MachineIntelligence_Grpc_BaseballPredictions.Client
             List<MLBBaseballBatter> batters = new List<MLBBaseballBatter>() {
                 badMLBBatter, averageMLBBatter, greatMLBBatter,
                 haroldBaines, bryceHarper, derekJeter, willieMays, davidOrtiz,
-                daleMurphy, calRipken, babeRuth, garySheffield, mikeTrout,
-                omarVizquel, larryWalker, ryanZimmerman};
+                daleMurphy, calRipken, babeRuth, garySheffield, 
+                mikeTrout, omarVizquel, larryWalker, ryanZimmerman};
 
             return Task.FromResult(
                 batters
