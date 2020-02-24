@@ -1,4 +1,4 @@
-**gRPC Baseball Machine Learning Predictions - Client & Server**
+**gRPC Baseball Machine Intelligence Predictions - Client & Server**
 
 **Background:** gRPC is an emerging open communication standard set of conventions that is as an option for building connected services.  It can be an alternative to REST/SOA based architectures. What makes gRPC compelling for Machine Intelligence (AI, ML) scenarios is it facilitates not only uranary communication, but also bi-directional/streaming as well.  Therefore, services such a IoT or streaming media can extract insights using Machine Intelligence dynamically.
 
