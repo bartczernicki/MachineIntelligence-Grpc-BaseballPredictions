@@ -54,12 +54,10 @@ namespace MachineIntelligence_Grpc_BaseballPredictions.Client
                 Console.WriteLine();
 
                 // InductedToHallOfFame Prediction
-
-                // OnHallOfFameBallot Prediction
                 baseBallPredictionRequest = new MLBBaseballBatterPredictionRequest
                 {
                     PredictionID = Guid.NewGuid().ToString(),
-                    PredictionType = PredictionType.OnHallOfFameBallot,
+                    PredictionType = PredictionType.InductedToHallOfFame,
                     AlgorithmName = AlgorithmName.StochasticGradientDescentCalibrated,
                     UseEnsembleOfAlgorithms = true,
                     MLBBaseballBatter = mlbBaseballPlayerBatter
