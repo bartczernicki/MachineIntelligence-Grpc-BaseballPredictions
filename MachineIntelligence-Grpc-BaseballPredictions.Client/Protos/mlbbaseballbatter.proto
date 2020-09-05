@@ -46,8 +46,9 @@ message MLBBaseballBatter {
     float GoldGloves = 18;
     float MajorLeaguePlayerOfTheYearAwards = 19;
     float TB = 20;
-    float LastYearPlayed = 21;
-    float ID = 22;
+    float TotalPlayerAwards = 21;
+    float LastYearPlayed = 22;
+    float ID = 23;
 }
 
 message MLBHOFPrediction {

@@ -143,7 +143,8 @@ namespace MachineIntelligence_Grpc_BaseballPredictions.Client
                 TripleCrowns = 0f,
                 GoldGloves = 0f,
                 MajorLeaguePlayerOfTheYearAwards = 0f,
-                TB = 2522f
+                TB = 2522f,
+                TotalPlayerAwards = 13f
             };
             MLBBaseballBatter haroldBaines = new MLBBaseballBatter
             {
@@ -168,7 +169,8 @@ namespace MachineIntelligence_Grpc_BaseballPredictions.Client
                 TripleCrowns = 0f,
                 GoldGloves = 0f,
                 MajorLeaguePlayerOfTheYearAwards = 0f,
-                TB = 5525f
+                TB = 5525f,
+                TotalPlayerAwards = 4f
             };
             MLBBaseballBatter bryceHarper = new MLBBaseballBatter
             {
@@ -193,7 +195,8 @@ namespace MachineIntelligence_Grpc_BaseballPredictions.Client
                 TripleCrowns = 0f,
                 GoldGloves = 0f,
                 MajorLeaguePlayerOfTheYearAwards = 0f,
-                TB = 1985f
+                TB = 1985f,
+                TotalPlayerAwards = 4f
             };
             MLBBaseballBatter derekJeter = new MLBBaseballBatter
             {
@@ -218,7 +221,8 @@ namespace MachineIntelligence_Grpc_BaseballPredictions.Client
                 TripleCrowns = 0f,
                 GoldGloves = 5f,
                 MajorLeaguePlayerOfTheYearAwards = 0f,
-                TB = 4921f
+                TB = 4921f,
+                TotalPlayerAwards = 20f
             };
             MLBBaseballBatter willieMays = new MLBBaseballBatter
             {
@@ -243,7 +247,8 @@ namespace MachineIntelligence_Grpc_BaseballPredictions.Client
                 TripleCrowns = 0f,
                 GoldGloves = 12f,
                 MajorLeaguePlayerOfTheYearAwards = 0f,
-                TB = 6066f
+                TB = 6066f,
+                TotalPlayerAwards = 32f
             };
             MLBBaseballBatter daleMurphy = new MLBBaseballBatter
             {
@@ -268,7 +273,8 @@ namespace MachineIntelligence_Grpc_BaseballPredictions.Client
                 TripleCrowns = 0f,
                 GoldGloves = 5f,
                 MajorLeaguePlayerOfTheYearAwards = 0f,
-                TB = 3733f
+                TB = 3733f,
+                TotalPlayerAwards = 19f
             };
             MLBBaseballBatter davidOrtiz = new MLBBaseballBatter
             {
@@ -293,7 +299,8 @@ namespace MachineIntelligence_Grpc_BaseballPredictions.Client
                 TripleCrowns = 0f,
                 GoldGloves = 0f,
                 MajorLeaguePlayerOfTheYearAwards = 0f,
-                TB = 4765f
+                TB = 4765f,
+                TotalPlayerAwards = 18f
             };
             MLBBaseballBatter calRipken = new MLBBaseballBatter
             {
@@ -318,7 +325,8 @@ namespace MachineIntelligence_Grpc_BaseballPredictions.Client
                 TripleCrowns = 0f,
                 GoldGloves = 2f,
                 MajorLeaguePlayerOfTheYearAwards = 0f,
-                TB = 5168f
+                TB = 5168f,
+                TotalPlayerAwards = 29f
             };
             MLBBaseballBatter garySheffield = new MLBBaseballBatter
             {
@@ -343,7 +351,8 @@ namespace MachineIntelligence_Grpc_BaseballPredictions.Client
                 TripleCrowns = 0f,
                 GoldGloves = 0f,
                 MajorLeaguePlayerOfTheYearAwards = 0f,
-                TB = 4737f
+                TB = 4737f,
+                TotalPlayerAwards = 9f
             };
             MLBBaseballBatter omarVizquel = new MLBBaseballBatter
             {
@@ -368,7 +377,8 @@ namespace MachineIntelligence_Grpc_BaseballPredictions.Client
                 TripleCrowns = 0f,
                 GoldGloves = 11f,
                 MajorLeaguePlayerOfTheYearAwards = 0f,
-                TB = 3727f
+                TB = 3727f,
+                TotalPlayerAwards = 12f
             };
             MLBBaseballBatter larryWalker = new MLBBaseballBatter
             {
@@ -393,7 +403,8 @@ namespace MachineIntelligence_Grpc_BaseballPredictions.Client
                 TripleCrowns = 0f,
                 GoldGloves = 7f,
                 MajorLeaguePlayerOfTheYearAwards = 0f,
-                TB = 3904f
+                TB = 3904f,
+                TotalPlayerAwards = 14f
             };
             MLBBaseballBatter ryanZimmerman = new MLBBaseballBatter
             {
@@ -418,7 +429,8 @@ namespace MachineIntelligence_Grpc_BaseballPredictions.Client
                 TripleCrowns = 0f,
                 GoldGloves = 1f,
                 MajorLeaguePlayerOfTheYearAwards = 0f,
-                TB = 3039f
+                TB = 3039f,
+                TotalPlayerAwards = 5f
             };
 
             List<MLBBaseballBatter> batters = new List<MLBBaseballBatter>() {
