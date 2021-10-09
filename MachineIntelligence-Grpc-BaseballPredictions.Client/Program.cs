@@ -11,6 +11,9 @@ namespace MachineIntelligence_Grpc_BaseballPredictions.Client
     {
         static async Task Main(string[] args)
         {
+            // Temporary workaround for Visual Studio 2022 Preview
+            Environment.SetEnvironmentVariable("ASPNETCORE_PREVENTHOSTINGSTARTUP", "true");
+
             Console.Title = "gRPC Baseball Predictions Client";
             Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("Starting the gRPC Baseball Predictions Client.");
