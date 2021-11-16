@@ -35,7 +35,8 @@ namespace MachineIntelligence_Grpc_BaseballPredictions
 
                 foreach (AlgorithmName algorithmName in Enum.GetValues(typeof(AlgorithmName)))
                 {
-                    var tempmodelNameForPrediction = string.Format("{0}-{1}", request.PredictionType, algorithmName);
+                    var predictionType = request.PredictionType.ToString() == "OnHoFballot" ? "OnHoFBallot" : "InductedToHoF"; 
+                    var tempmodelNameForPrediction = string.Format("{0}-{1}", predictionType, algorithmName);
                     var tempPrediction = _predictionPool.Predict(tempmodelNameForPrediction, request.MLBBaseballBatter);
                     allModelAlgorithmPredictions.Add(tempPrediction);
                 }

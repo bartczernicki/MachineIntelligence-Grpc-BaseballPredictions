@@ -59,13 +59,13 @@ message MLBHOFPrediction {
 
 enum AlgorithmName {
     FastTree = 0;
-    GeneralizedAdditiveModel = 1;
+    GeneralizedAdditiveModels = 1;
     LogisticRegression = 2;
     LightGbm = 3;
     StochasticGradientDescentCalibrated = 4;
 }
 
 enum PredictionType {
-    InductedToHallOfFame = 0;
-    OnHallOfFameBallot = 1;
+    InductedToHoF = 0;
+    OnHoFBallot = 1;
 }

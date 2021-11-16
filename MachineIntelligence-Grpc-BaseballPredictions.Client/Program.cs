@@ -35,8 +35,8 @@ namespace MachineIntelligence_Grpc_BaseballPredictions.Client
                 // OnHallOfFameBallot Prediction
                 var baseBallPredictionRequest = new MLBBaseballBatterPredictionRequest { 
                     PredictionID = Guid.NewGuid().ToString(),
-                    PredictionType = PredictionType.OnHallOfFameBallot,
-                    AlgorithmName = AlgorithmName.GeneralizedAdditiveModel,
+                    PredictionType = PredictionType.OnHoFballot,
+                    AlgorithmName = AlgorithmName.GeneralizedAdditiveModels,
                     UseEnsembleOfAlgorithms = true,
                     MLBBaseballBatter = mlbBaseballPlayerBatter
                 };
@@ -60,8 +60,8 @@ namespace MachineIntelligence_Grpc_BaseballPredictions.Client
                 baseBallPredictionRequest = new MLBBaseballBatterPredictionRequest
                 {
                     PredictionID = Guid.NewGuid().ToString(),
-                    PredictionType = PredictionType.InductedToHallOfFame,
-                    AlgorithmName = AlgorithmName.GeneralizedAdditiveModel,
+                    PredictionType = PredictionType.InductedToHoF,
+                    AlgorithmName = AlgorithmName.GeneralizedAdditiveModels,
                     UseEnsembleOfAlgorithms = false,
                     MLBBaseballBatter = mlbBaseballPlayerBatter
                 };

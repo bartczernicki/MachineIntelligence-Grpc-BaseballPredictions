@@ -22,29 +22,29 @@ namespace MachineIntelligence_Grpc_BaseballPredictions
 
             /* Custom Services */
 
-            string modelPathInductedToHallOfFameStochasticGradientDescentCalibrated = Path.Combine(Environment.CurrentDirectory, "Models", "InductedToHallOfFame-StochasticGradientDescentCalibrated.mlnet");
-            string modelPathInductedToHallOfFameFastTree = Path.Combine(Environment.CurrentDirectory, "Models", "InductedToHallOfFame-FastTree.mlnet");
-            string modelPathInductedToHallOfFameGeneralizedAdditiveModel = Path.Combine(Environment.CurrentDirectory, "Models", "InductedToHallOfFame-GeneralizedAdditiveModel.mlnet");
-            string modelPathInductedToHallOfFameLogisticRegression = Path.Combine(Environment.CurrentDirectory, "Models", "InductedToHallOfFame-LogisticRegression.mlnet");
-            string modelPathInductedToHallOfFameLightGbm = Path.Combine(Environment.CurrentDirectory, "Models", "InductedToHallOfFame-LightGbm.mlnet");
+            string modelPathInductedToHallOfFameStochasticGradientDescentCalibrated = Path.Combine(Environment.CurrentDirectory, "Models", "InductedToHoF-StochasticGradientDescentCalibrated.mlnet");
+            string modelPathInductedToHallOfFameFastTree = Path.Combine(Environment.CurrentDirectory, "Models", "InductedToHoF-FastTree.mlnet");
+            string modelPathInductedToHallOfFameGeneralizedAdditiveModels = Path.Combine(Environment.CurrentDirectory, "Models", "InductedToHoF-GeneralizedAdditiveModels.mlnet");
+            string modelPathInductedToHallOfFameLogisticRegression = Path.Combine(Environment.CurrentDirectory, "Models", "InductedToHoF-LogisticRegression.mlnet");
+            string modelPathInductedToHallOfFameLightGbm = Path.Combine(Environment.CurrentDirectory, "Models", "InductedToHoF-LightGbm.mlnet");
 
-            string modelPathOnHallOfFameBallotStochasticGradientDescentCalibrated = Path.Combine(Environment.CurrentDirectory, "Models", "OnHallOfFameBallot-StochasticGradientDescentCalibrated.mlnet");
-            string modelPathOnHallOfFameBallotFastTree = Path.Combine(Environment.CurrentDirectory, "Models", "OnHallOfFameBallot-FastTree.mlnet");
-            string modelPathOnHallOfFameBallotGeneralizedAdditiveModel = Path.Combine(Environment.CurrentDirectory, "Models", "OnHallOfFameBallot-GeneralizedAdditiveModel.mlnet");
-            string modelPathOnHallOfFameBallotLogisticRegression = Path.Combine(Environment.CurrentDirectory, "Models", "OnHallOfFameBallot-LogisticRegression.mlnet");
-            string modelPathOnHallOfFameBallotLightGbm = Path.Combine(Environment.CurrentDirectory, "Models", "OnHallOfFameBallot-LightGbm.mlnet");
+            string modelPathOnHallOfFameBallotStochasticGradientDescentCalibrated = Path.Combine(Environment.CurrentDirectory, "Models", "OnHoFBallot-StochasticGradientDescentCalibrated.mlnet");
+            string modelPathOnHallOfFameBallotFastTree = Path.Combine(Environment.CurrentDirectory, "Models", "OnHoFBallot-FastTree.mlnet");
+            string modelPathOnHallOfFameBallotGeneralizedAdditiveModels = Path.Combine(Environment.CurrentDirectory, "Models", "OnHoFBallot-GeneralizedAdditiveModels.mlnet");
+            string modelPathOnHallOfFameBallotLogisticRegression = Path.Combine(Environment.CurrentDirectory, "Models", "OnHoFBallot-LogisticRegression.mlnet");
+            string modelPathOnHallOfFameBallotLightGbm = Path.Combine(Environment.CurrentDirectory, "Models", "OnHoFBallot-LightGbm.mlnet");
 
             services.AddPredictionEnginePool<MLBBaseballBatter, MLBHOFPrediction>()
-                .FromFile("InductedToHallOfFame-StochasticGradientDescentCalibrated", modelPathInductedToHallOfFameStochasticGradientDescentCalibrated)
-                .FromFile("InductedToHallOfFame-FastTree", modelPathInductedToHallOfFameFastTree)
-                .FromFile("InductedToHallOfFame-GeneralizedAdditiveModel", modelPathInductedToHallOfFameGeneralizedAdditiveModel)
-                .FromFile("InductedToHallOfFame-LogisticRegression", modelPathInductedToHallOfFameLogisticRegression)
-                .FromFile("InductedToHallOfFame-LightGbm", modelPathInductedToHallOfFameLightGbm)
-                .FromFile("OnHallOfFameBallot-StochasticGradientDescentCalibrated", modelPathOnHallOfFameBallotStochasticGradientDescentCalibrated)
-                .FromFile("OnHallOfFameBallot-FastTree", modelPathOnHallOfFameBallotFastTree)
-                .FromFile("OnHallOfFameBallot-GeneralizedAdditiveModel", modelPathOnHallOfFameBallotGeneralizedAdditiveModel)
-                .FromFile("OnHallOfFameBallot-LogisticRegression", modelPathOnHallOfFameBallotLogisticRegression)
-                .FromFile("OnHallOfFameBallot-LightGbm", modelPathOnHallOfFameBallotLightGbm);
+                .FromFile("InductedToHoF-StochasticGradientDescentCalibrated", modelPathInductedToHallOfFameStochasticGradientDescentCalibrated)
+                .FromFile("InductedToHoF-FastTree", modelPathInductedToHallOfFameFastTree)
+                .FromFile("InductedToHoF-GeneralizedAdditiveModels", modelPathInductedToHallOfFameGeneralizedAdditiveModels)
+                .FromFile("InductedToHoF-LogisticRegression", modelPathInductedToHallOfFameLogisticRegression)
+                .FromFile("InductedToHoF-LightGbm", modelPathInductedToHallOfFameLightGbm)
+                .FromFile("OnHoFBallot-StochasticGradientDescentCalibrated", modelPathOnHallOfFameBallotStochasticGradientDescentCalibrated)
+                .FromFile("OnHoFBallot-FastTree", modelPathOnHallOfFameBallotFastTree)
+                .FromFile("OnHoFBallot-GeneralizedAdditiveModels", modelPathOnHallOfFameBallotGeneralizedAdditiveModels)
+                .FromFile("OnHoFBallot-LogisticRegression", modelPathOnHallOfFameBallotLogisticRegression)
+                .FromFile("OnHoFBallot-LightGbm", modelPathOnHallOfFameBallotLightGbm);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
